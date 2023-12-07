@@ -34,8 +34,10 @@ const options = {
 
 const runtime = getRuntime()
 
-const {handler} = runtime.createHandler(options, (app) => {
+const {handler} = runtime.createHandler(options, (app) => {    
     // Set default HTTP security headers required by PWA Kit
+    app.use(defaultPwaKitSecurityHeaders)
+// Set default HTTP security headers required by PWA Kit
     app.use(defaultPwaKitSecurityHeaders)
     // Set custom HTTP security headers
     app.use(
@@ -54,9 +56,12 @@ const {handler} = runtime.createHandler(options, (app) => {
                     'connect-src': [
                         // Connect to Einstein APIs
                         'api.cquotient.com'
-                    ]
+                    ],
+                    'frame-src':["'self'", 'https://www.youtube.com'],
+                    'upgrade-insecure-requests': isRemote() ? [] : null
                 }
-            }
+            },
+            hsts: isRemote()
         })
     )
 
