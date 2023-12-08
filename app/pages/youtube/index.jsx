@@ -6,12 +6,12 @@ function Youtube() {
   return (
     <>
     <h1> Youtube Page</h1>
-    <iframe>
+    <iframe
       width='1280'
       height='720'
       title='Round to the World Fitness Challange 2022'
       src='https://www.youtube.com/embed/nh_NaMZKM0c'
-      allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share; clipboard-write;'
+      allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share; clipboard-write;'>
     </iframe>
     </>
   )

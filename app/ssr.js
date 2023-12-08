@@ -11,6 +11,8 @@ import path from 'path'
 import {getRuntime} from '@salesforce/pwa-kit-runtime/ssr/server/express'
 import {defaultPwaKitSecurityHeaders} from '@salesforce/pwa-kit-runtime/utils/middleware'
 import {getConfig} from '@salesforce/pwa-kit-runtime/utils/ssr-config'
+import {isRemote} from '@salesforce/pwa-kit-runtime/utils/ssr-server'
+
 import helmet from 'helmet'
 
 const options = {
